@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Texto Parpadeante Centrado</title>
+  <style>
+    .imagen-derecha, .imagen-izquierda {
+      position: fixed;
+      top: 10px;
+      width: 100px;
+      height: auto;
+      z-index: 1;
+    }
+
+    .imagen-derecha {
+      right: 10px;
+    }
+
+    .imagen-izquierda {
+      left: 10px;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('imgdefondo.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .titulo-parpadeante {
+      font-size: 72px;
+      font-weight: bold;
+      animation: parpadeo 1s infinite alternate, cambiarColor 5s infinite;
+      text-align: center;
+      margin-top: 120px;
+    }
+
+    @keyframes parpadeo {
+      0% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    @keyframes cambiarColor {
+      0%   { color: red; }
+      25%  { color: blue; }
+      50%  { color: green; }
+      75%  { color: orange; }
+      100% { color: purple; }
+    }
+
+    nav {
+      background-color: #ffffff;
+      padding: 20px 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      overflow-x: auto;
+      z-index: 10;
+      position: relative;
+    }
+
+    .menu {
+      display: flex;
+      gap: 20px;
+      flex-wrap: nowrap;
+      justify-content: center;
+      min-width: max-content;
+    }
+
+    .menu-item {
+      position: relative;
+    }
+
+    .menu-item > button {
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      background-color: #007bff;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .menu-item > button:hover {
+      background-color: #0056b3;
+    }
+
+    .submenu {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      background-color: #222831;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.7);
+      min-width: 200px;
+      padding: 10px 0;
+      margin-top: 10px;
+      z-index: 1000;
+    }
+
+    .submenu button {
+      width: 100%;
+      background-color: #00adb5;
+      color: white;
+      font-size: 14px;
+      padding: 8px 16px;
+      margin: 4px 0;
+      border: none;
+      border-radius: 8px;
+      text-align: left;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      white-space: normal;
+    }
+
+    .submenu button:hover {
+      background-color: #007b7f;
+    }
+
+    .concepto {
+      margin-top: 40px;
+      font-size: 20px;
+      color: #333;
+      max-width: 700px;
+      text-align: center;
+      padding: 20px;
+      background-color: #e2e3e5;
+      border-radius: 10px;
+      display: none;
+    }
+
+    .resaltado {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="logodelcolegio.jpg" class="imagen-derecha" alt="Logo del colegio" />
+  <img src="colegio.jpg" class="imagen-izquierda" alt="Imagen izquierda" />
+
+  <h1 class="titulo-parpadeante">PROYECTO DEL ÁREA TÉCNICA INFORMÁTICA</h1>
+
+  <nav>
+    <div class="menu">
+      <div class="menu-item">
+        <button>Aplicaciones ofimáticas locales y en línea</button>
+        <div class="submenu" id="submenu1">
+         
+
+          <button onclick="mostrarConcepto('Segundo trimestre: Publicidad online, SEO y redes sociales.')">Segundo trimestre</button>
+          <button onclick="mostrarConcepto('Tercer trimestre: Te guiamos en tus proyectos digitales.')">Tercer trimestre</button>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <button>Diseño y desarrollo web</button>
+        <div class="submenu" id="submenu2">
+           <button onclick="mostrarConcepto(`
+            <span class='resaltado'>Códigos QR</span>: Los codigos qr son una evolucion del codigo de barras tradicional, Se presentan como un cuadro con pstrones en blanco y negro que pueden ser leidos por la camara de un celular o una aplicacion especial .<br><br>
+            Su principal función es almacenar información de forma rápida y accesible, permitiendo que una persona, con solo escanear el código, acceda directamente a contenido digital como: <br><br>
+Enlaces a páginas web.<br><br>
+
+
+Textos, videos o imágenes.<br><br>
+
+
+Datos de contacto o ubicación.<br><br>
+
+
+Archivos descargables (PDF, presentaciones, tareas).<br><br>
+
+
+Claves Wi-Fi o mensajes automáticos.<br><br>
+
+
+
+            Los códigos QR se utilizan en muchos ámbitos por su versatilidad y rapidez, por ejemplo:<br><br>
+Educación: para compartir materiales, tareas, enlaces o formularios.<br><br>
+
+
+Publicidad y marketing: en volantes, posters o productos para mostrar promociones o videos.<br><br>
+
+
+Eventos: como entradas digitales o registros rápidos.<br><br>
+
+
+Restaurantes: para mostrar menús sin contacto físico.<br><br>
+
+
+Pagos electrónicos: permiten transferencias o cobros sin efectivo.<br><br>
+
+
+Redes sociales: para compartir perfiles o seguir páginas con un solo escaneo.<br><br>
+Páginas web para crear códigos QR (gratis y sin instalar nada):<br><br>
+
+qr-code-monkey.com <br><br>
+goqr.me <br><br>
+qr-code-generator.com<br><br>
+unitag.io/qrcode<br><br>
+canva.com<br><br>
+ <img src='ejemplo.jpg' alt='Ejemplo Código QR' style='max-width:100%; border-radius:10px;'/><br><br>
+ <span class='resaltado'>¿Que es canva?</span>: Canva es una plataforma en línea gratuita (también con versión paga) que permite crear diseños gráficos de forma fácil y rápida, sin necesidad de tener conocimientos avanzados de diseño.<br><br>
+¿Para qué sirve Canva?<br><br>
+
+Con Canva puedes diseñar:<br><br>
+
+
+Presentaciones escolares o profesionales.<br><br>
+
+
+Infografías, carteles y folletos.<br><br>
+
+
+Logos y tarjetas de presentación.<br><br>
+
+
+Publicaciones para redes sociales (Instagram, TikTok, Facebook, etc.).<br><br>
+
+
+Invitaciones, certificados, menús, calendarios… ¡y mucho más!<br><br>
+
+
+Códigos QR integrados en tus diseños.<br><br>
+
+
+💡 ¿Qué tiene de especial?<br><br>
+
+Usa plantillas prediseñadas, solo cambias texto o imágenes.<br><br>
+
+
+Todo se hace arrastrando y soltando elementos (muy fácil).<br><br>
+
+
+Puedes usarlo desde la web o app móvil (Android/iOS).<br><br>
+
+
+Tiene una biblioteca gratuita con imágenes, íconos, videos y música.<br><br>
+ <img src='canvaejemplo.jpg' alt='Ejemplo Código QR' style='max-width:100%; border-radius:10px;'/><br><br>
+
+<span class='resaltado'>Hosting</span>: Un hosting (también llamado alojamiento web) es un servicio que permite guardar y publicar tu sitio web en Internet. Es como rentar un espacio en una computadora especial (servidor) para que los archivos de tu página (textos, imágenes, videos, etc.) estén disponibles en línea para cualquier persona.<br><br>
+✅ ¿Para qué sirve un hosting?<br><br>
+
+El hosting sirve para:<br><br>
+
+
+Publicar páginas web: Permite que tu sitio esté disponible en Internet las 24 horas del día.<br><br>
+
+
+Guardar archivos de la web: Almacena todos los elementos de tu sitio: HTML, imágenes, videos, bases de datos, etc.<br><br>
+
+
+Gestionar correos electrónicos personalizados: Algunos hostings permiten usar emails como: tunombre@tusitio.com.<br><br>
+
+
+Soportar aplicaciones web: Si tienes una tienda en línea, blog o sistema de reservas, el hosting permite que funcionen correctamente.<br><br>
+<img src='hosting.jpg' alt='Ejemplo Código QR' style='max-width:100%; border-radius:10px;'/><br><br>
+
+
+<span class='resaltado'>GitHuB</span>: GitHub es una plataforma en línea que permite a los programadores guardar, compartir y colaborar en proyectos de programación. Funciona como una red social para desarrolladores, y está basada en un sistema llamado Git, que ayuda a controlar los cambios realizados en el código de un proyecto.<br><br>
+🔧 ¿Para qué sirve GitHub?<br><br>
+
+🧠 Guardar el código de tus proyectos en la nube<br><br>
+
+
+Ya no necesitas tener todos tus archivos solo en tu computadora.<br><br>
+
+
+🕒 Llevar un historial de cambios (control de versiones)<br><br>
+
+
+Puedes ver qué cambios hiciste, cuándo y por qué.<br><br>
+
+
+🤝 Trabajar en equipo en un mismo proyecto<br><br>
+
+
+Varios programadores pueden trabajar juntos sin pisarse el trabajo.<br><br>
+
+
+🔍 Compartir tus proyectos públicamente o de forma privada<br><br>
+
+
+Puedes mostrar tus trabajos a otros o mantenerlos en secreto.<br><br>
+
+
+🌐 Publicar sitios web gratis con GitHub Pages<br><br>
+
+
+Ideal para mostrar páginas HTML simples como portafolios o blogs.<br><br>
+
+<img src='github.png' alt='Ejemplo Código QR' style='max-width:100%; border-radius:10px;'/><br><br>
+
+
+ `)">Primer trimestre</button>
+           
+          <button onclick="mostrarConcepto('Producto B: Herramienta ideal para emprendedores.')">Segundo trimestre</button>
+<button onclick="mostrarConcepto('Producto B: Herramienta ideal para emprendedores.')">Tercer trimestre</button>
+
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <button>Programación y base de datos</button>
+        <div class="submenu" id="submenu3">
+          <button onclick="mostrarConcepto('Email: contacto@empresa.com')">Email</button>
+          <button onclick="mostrarConcepto('WhatsApp: Atención al cliente 24/7')">WhatsApp</button>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <button>Sistemas operativos y redes</button>
+        <div class="submenu" id="submenu4">
+          <button onclick="mostrarConcepto('Historia: Más de 20 años formando profesionales.')">Historia</button>
+          <button onclick="mostrarConcepto('Equipo: Un equipo comprometido con la innovación.')">Equipo</button>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <button>Soporte técnico</button>
+        <div class="submenu" id="submenu5">
+          <button onclick="mostrarConcepto('Preguntas Frecuentes: Encuentra respuestas rápidas.')">Preguntas Frecuentes</button>
+          <button onclick="mostrarConcepto('Ayuda Técnica: Nuestro equipo está para asistirte.')">Ayuda Técnica</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="concepto" id="concepto"></div>
+
+  <script>
+    function mostrarConcepto(contenidoHTML) {
+      const concepto = document.getElementById('concepto');
+      concepto.innerHTML = contenidoHTML;
+      concepto.style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
